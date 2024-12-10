@@ -1,0 +1,18 @@
+<!-- This footer should hidden by default and shown when there are todos -->
+<footer class="footer">
+
+  <span class="todo-count"><strong>{{pendientes}}</strong> faltan </span>
+
+  <ul class="filters">
+    @for (item of filtros; track $index) {
+
+    <li (click)="cambiarFiltro(item)">
+      <a href="#/" [class.selected]="item === fltroActual"> {{item }}</a>
+    </li>
+
+    }
+
+  </ul>
+  <!-- Hidden if no completed items are left ↓ -->
+  <button class="clear-completed" (click)="clearComplet()">Clear completed</button>
+</footer>
